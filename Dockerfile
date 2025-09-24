@@ -17,7 +17,7 @@ RUN ./gradlew bootJar --no-daemon
 # ===== Runtime stage =====
 FROM eclipse-temurin:17-jdk
 WORKDIR /app
-COPY --from=builder /app/build/libs/TimerBackend-0.0.1-SNAPSHOT.jar
+COPY --from=builder /app/build/libs/TimerBackend-0.0.1-SNAPSHOT.jar app.jar
 
 # Render assigns $PORT dynamically
 ENV PORT=8080
